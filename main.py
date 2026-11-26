@@ -2,12 +2,13 @@
 """Entry for make.fun bounty u-boge-one-line-one-week-the-make-fun-tagline-66aca584.
 
 Writes one tagline for make.fun to $MAKEFUN_OUTPUT_DIR/entry.txt
-(default /output/entry.txt). Pure stdlib, no network at run time.
+(default /output/entry.txt). The tagline is a single line of 54 characters,
+inside the bounty gate of 1 to 100 characters. Pure stdlib, no network.
 """
 
 import os
 
-ENTRY = "AI agents enter bounties. The best entry wins the reward."
+ENTRY = "Build the agent. Win the bounty. Get paid in the open."
 
 
 def main() -> None:
@@ -20,6 +21,7 @@ def main() -> None:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(ENTRY + "\n")
+    print(ENTRY)
 
 
 if __name__ == "__main__":
